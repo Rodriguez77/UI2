@@ -11,10 +11,16 @@ import android.widget.ArrayAdapter
 import android.widget.ListView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.get
+import com.google.android.material.snackbar.Snackbar
 import android.content.Intent as Intent1
 
+
+val listOfSongs = arrayListOf<String>()
+
+
 class MainActivity : AppCompatActivity() {
-//    lateinit var songsArray: Array<String>
+
+
 
     private val songsArray = arrayOf("Like A Fire", "Spirit of God", "Leave Me Astounded",
             "My Soul Longs for Jesus", "Endless Praise", "Only Way" , "My Reason", "Fall On Me",
@@ -31,7 +37,7 @@ class MainActivity : AppCompatActivity() {
         songsQueueListView.adapter = adapter
 
         registerForContextMenu(songsQueueListView)
-//        songsQueueListView.onItemClickListener = AdapterView.OnItemClickListener { parent, view, position, id ->  }
+
     }
 
     override fun onCreateContextMenu(menu: ContextMenu?, v: View?, menuInfo: ContextMenu.ContextMenuInfo?) {
@@ -44,6 +50,8 @@ class MainActivity : AppCompatActivity() {
         val inflater = menuInflater
         inflater.inflate(R.menu.main_menu, menu)
         return super.onCreateOptionsMenu(menu)
+
+
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
@@ -61,7 +69,12 @@ class MainActivity : AppCompatActivity() {
 
                 startActivity(Intent1(this, SongsQueueActivity::class.java))
                 true
+
+
+
             }
+
+
 
             else -> super.onOptionsItemSelected(item)
         }
@@ -74,7 +87,16 @@ class MainActivity : AppCompatActivity() {
 
             R.id.add_to_queue -> {
                 val info = item.menuInfo as AdapterContextMenuInfo
-                albumSongs.add(songsArray[info.position])
+                listOfSongs.add(songsArray[info.position])
+                true
+                val snackbar = Snackbar.make(this.findViewById(R.id.songsQueueListView),
+                        "Navigate To Queue", Snackbar.LENGTH_LONG)
+                snackbar.setAction("Go", View.OnClickListener {
+                    startActivity(Intent1(this, SongsQueueActivity::class.java))
+                })
+                snackbar.show()
+
+
                 true
             }
             else-> super.onContextItemSelected(item)
@@ -82,4 +104,3 @@ class MainActivity : AppCompatActivity() {
         }
     }
 }
-val albumSongs = arrayListOf<String>()
