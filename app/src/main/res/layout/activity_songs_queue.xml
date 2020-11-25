@@ -19,13 +19,21 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+
+
     <ListView
-        android:id="@+id/queue_songs"
+        android:id="@+id/songsQueued"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:layout_editor_absoluteX="109dp"
-        tools:layout_editor_absoluteY="329dp"
-        android:layout_marginTop="50dp"
-        android:layout_below="@id/textView"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <!--    <ListView-->
+<!--        android:id="@+id/queue_songs"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        tools:layout_editor_absoluteX="109dp"-->
+<!--        tools:layout_editor_absoluteY="329dp"-->
+<!--        android:layout_marginTop="50dp"-->
+<!--        android:layout_below="@id/textView"/>-->
 </RelativeLayout>
 
