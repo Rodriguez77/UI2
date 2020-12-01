@@ -29,8 +29,10 @@ import androidx.core.content.ContextCompat.getSystemService
 lateinit var notificationManager: NotificationManager
 lateinit var notificationChannel: NotificationChannel
 lateinit var builder: Notification.Builder
-private val channelId="com.example.uielements2"
+private val channelId="com.example.ui2"
 private val description="Notification"
+lateinit var songsQueueArray: MutableList<String>
+
 class SongsQueueActivity : AppCompatActivity() {
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {

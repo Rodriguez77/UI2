@@ -6,14 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".AlbumDetailsActivity">
 
-    <ImageView
-        android:id="@+id/icon_details"
-        android:layout_width="350dp"
-        android:layout_height="350dp"
-        android:src="@drawable/outback_worship"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="50dp">
-    </ImageView>
 
     <TextView
         android:id="@+id/icon_name"
@@ -21,7 +13,6 @@
         android:layout_height="wrap_content"
         android:text="Outback Worship"
         android:layout_centerHorizontal="true"
-        android:layout_below="@id/icon_details"
         android:layout_marginTop="20dp">
     </TextView>
 
